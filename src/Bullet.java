@@ -2,7 +2,7 @@ import java.awt.*;
 
 public class Bullet {
     private int bulletWidth=5;
-    private int bulletHeight=10;
+    private int bulletHeight=7;
     private CustomRectangle bullet;
     private boolean hit;
     private boolean shot;
@@ -13,10 +13,13 @@ public class Bullet {
                 y,
                 bulletWidth,
                 bulletHeight,
-                Color.white);
+                Color.CYAN);
         this.hit=false;
         this.shot=false;
 
+    }
+    public void setY(int y){
+        this.bullet.setY(y);
     }
 
     public int getBulletWidth() {

@@ -109,19 +109,10 @@ public class Ship {
         this.alive = false;
     }
 
-//    public Bullet createBullet(){
-//        Bullet bullet=new Bullet(this.getX()+(this.getWidth()/2),780) ;
-//        this.bullets.add(bullet);
-//        return bullet;
-//    }
-
     public ArrayList<Bullet> getBullets() {
         return bullets;
     }
 
-//    public void setBullets(ArrayList<Bullet> bullets) {
-//        this.bullets = bullets;
-//    }
 public boolean checkCollision (Alien enemy) {
     boolean collision = false;
     Rectangle spaceShip = new Rectangle(

@@ -35,6 +35,7 @@ public class PlayerController implements KeyListener {
             if (!galagaPanel.isShoting()) {
                 galagaPanel.getPlayer().shot();
                 galagaPanel.setShoting(true);
+                galagaPanel.getPlayer().shot();
                 System.out.println("done");
             }
 

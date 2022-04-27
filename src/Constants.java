@@ -6,11 +6,11 @@ public class Constants {
     public static final int MOVE = 5;
     public static final char RIGHT = 'R';
     public static final char LEFT = 'L';
-    public static final int NUM_OF_ALIEN =1;
+    public static final int NUM_OF_ALIEN =18;
     public static final int AMOUNT_OF_ALIEN_IN_LINE =9;
     public static final int MOVE_OFFSET = 10;
     public static final int SLEEP_TIME = 20;
-    public static final int ALIEN_SLEEP_TIME = 100;
+    public static final int ALIEN_SLEEP_TIME = 60;
     public static final int TOP_BORDER =WINDOW_HEIGHT/2;
     public static final int LOWER_BORDER =WINDOW_HEIGHT-100;
     public static final int RIGHT_BORDER = WINDOW_WIDTH - 50;

@@ -45,7 +45,6 @@ public class GalagaPanel extends JPanel {
         for (Alien alien : this.enemies) {
             if (alien.isAlive()) {
                 this.alien.paintIcon(this, graphics, alien.getX(), alien.getY());
-
             }
         }
         if(spaceShip.isAlive()) {
@@ -110,11 +109,11 @@ public class GalagaPanel extends JPanel {
             ArrayList<Bullet> bullets = spaceShip.getBullets();
             spaceShip.shot();
             this.bullet=bullets.get(0);
-        while (spaceShip.isAlive()) {
-            if (shot) {
+        while (true) {
+            if (isShoting) {
+                this.bullet=bullets.get(bullets.size()-1);
                 this.bullet.moveUp();
                 }
-
                 for (Alien alien1 : this.enemies) {
                     Alien currentAlien = alien1;
                     if (this.bullet.checkCollision(currentAlien)) {
@@ -122,16 +121,22 @@ public class GalagaPanel extends JPanel {
                         currentAlien.setAlive(false);
                         this.enemies.remove(currentAlien);
                         System.out.println("COLLISION!");
-                        if (this.enemies.size()==0){
+                        bullet.setHit(true);
+                        spaceShip.bullets.remove(this.bullet);
+                        this.bullet.setY(-1);//out of the game
+                        isShoting=false;
+                        if (this.enemies.size()<1){
                             Won won = new Won(0, 0, Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
                             this.add(won);
                             break;
                         }
                         break;
-                    }if (this.bullet.getY() == 0) {
+                    }
+                    if (this.bullet.getY() < 0) {
                         isShoting = false;
                         shot = false;
-                        spaceShip.shot();
+                        bullet.setHit(false);
+                        spaceShip.bullets.remove(this.bullet);
                     }
 
             }
